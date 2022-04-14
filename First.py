@@ -1,8 +1,15 @@
-from curses import has_ic
-from math import factorial
-from socket import gethostbyname
-from unittest.result import failfast
+
+x = int(input('Введите число : '))
 
 
-failfast 
-gethostbyname
+if 3 < x < 30:
+
+    print('Ухади')
+elif x == 3:
+    print('Меньше 3')
+elif x > 30:
+    print('Больше 30')
+
+else:
+    print("Ку")
+  
