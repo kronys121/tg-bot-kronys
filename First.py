@@ -1,13 +1,11 @@
-zoo_mass = {
-    'lion' : 300,
-    'cat'  : 4,
-    'dog'  : 15,
-    
-}
-total = 0
+def power(number, pow):
+    print('параметры', number,pow)
+    power_result = number ** pow
+    return power_result
 
-for animal in zoo_mass:
-    mass = zoo_mass[animal]
-    print(animal, mass)
-    total += mass
-print('Весс всех животных', total)
+list = [1, 3, 5, 6, 7]
+
+for element in list:
+    result = power(number = element, pow = 3)
+
+    print(result)
