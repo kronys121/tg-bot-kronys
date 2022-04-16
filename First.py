@@ -1,11 +1,18 @@
-def power(number, pow):
-    print('параметры', number,pow)
-    power_result = number ** pow
-    return power_result
+import simple_draw as sd
 
-list = [1, 3, 5, 6, 7]
+sd.resolution = (1200,600)
 
-for element in list:
-    result = power(number = element, pow = 3)
+def bubble(point,step):
 
-    print(result)
+    radius = 50
+    for _ in range(3):
+
+        radius += step
+
+        sd.circle(center_position=point, radius=radius,) 
+    
+
+for x in range(100, 1100, 100):
+    point = sd.get_point(x,100)
+    bubble(point=point,step=3) 
+sd.pause()
