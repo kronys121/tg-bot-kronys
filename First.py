@@ -1,18 +1,39 @@
-import simple_draw as sd
+from pprint import pprint
 
-sd.resolution = (1200,600)
 
-def bubble(point,step):
+class Purse:
+    def __init__(self,valuta,name='Unknown'):
+        self.money = 0
+        self.valuta = valuta
+        self.name = name
 
-    radius = 50
-    for _ in range(3):
+    def top_up_balance(self, howmany):
+        self.money = self.money + howmany
 
-        radius += step
+    def top_down_balance(self,howmany):
+        if self.money - howmany < 0:
 
-        sd.circle(center_position=point, radius=radius,) 
+            print('Нету денег')
+            raise ValueError ('Нету денег')
+        self.money = self.money - howmany
     
+    def convector_usd(self,usd):
+        self.money = self.money * usd
 
-for x in range(100, 1100, 100):
-    point = sd.get_point(x,100)
-    bubble(point=point,step=3) 
-sd.pause()
+    def convector_eur(self,eur):
+        self.money = self.money * eur
+
+
+    def info(self):
+        return self.money
+
+ 
+x = Purse('USD')
+y = Purse("EUR",'Bill')
+x.top_up_balance(100)
+print(x.money)
+x.convector_eur(73)
+print('EUR', x.money)
+
+
+
